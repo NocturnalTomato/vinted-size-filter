@@ -1,10 +1,6 @@
 (() => {
   const ITEM_SELECTOR = '[data-testid^="grid-item"]';
   const SUBTITLE_SUFFIX = '--description-subtitle';
-  const KID_SIZES = [
-    '50', '56', '62', '68', '74', '80', '86', '92', '98',
-    '104', '110', '116', '122', '128', '134', '140', '146', '152', '158', '164', '170', '176'
-  ];
 
   let activeSize = '';
   const sizesSeen = new Set();
@@ -62,8 +58,14 @@
     if (!chipRow) return;
     chipRow.innerHTML = '';
     const detected = [...sizesSeen].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
-    const sizesToShow = detected.length ? detected : KID_SIZES;
-    sizesToShow.forEach((size) => {
+    if (!detected.length) {
+      const hint = document.createElement('span');
+      hint.className = 'vsf-hint';
+      hint.textContent = 'No sizes detected yet - scroll or click "Load full closet".';
+      chipRow.appendChild(hint);
+      return;
+    }
+    detected.forEach((size) => {
       const chip = document.createElement('button');
       chip.type = 'button';
       chip.className = 'vsf-chip';
