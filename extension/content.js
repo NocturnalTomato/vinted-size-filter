@@ -135,13 +135,18 @@
     let stableRounds = 0;
     const maxRounds = 80;
     for (let round = 0; round < maxRounds && stableRounds < 3; round += 1) {
+      const cardsNow = document.querySelectorAll(ITEM_SELECTOR);
+      const lastCard = cardsNow[cardsNow.length - 1];
+      // scrollIntoView triggers IntersectionObserver-based lazy loaders more
+      // reliably than a raw window.scrollTo jump.
+      if (lastCard) lastCard.scrollIntoView({ block: 'end' });
       window.scrollTo(0, document.body.scrollHeight);
       // eslint-disable-next-line no-await-in-loop
-      await new Promise((resolve) => setTimeout(resolve, 600));
+      await new Promise((resolve) => setTimeout(resolve, 700));
       const count = document.querySelectorAll(ITEM_SELECTOR).length;
       stableRounds = count === lastCount ? stableRounds + 1 : 0;
       lastCount = count;
-      loadAllBtn.textContent = `Loading... (${count} loaded)`;
+      loadAllBtn.textContent = `Loading... (${count} loaded, ${sizesSeen.size} sizes)`;
       applyFilter();
     }
     loadAllBtn.disabled = false;
