@@ -27,25 +27,29 @@ have to scroll manually to find matches further down.
 4. Visit any Vinted seller page, e.g. `https://www.vinted.nl/member/<id>`. A filter bar
    appears above their listed items.
 
-## Using it on Android
+## Using it on a phone (any browser)
 
-Chrome for Android doesn't support extensions at all, but [Kiwi
-Browser](https://kiwibrowser.com/) does — it's a free, Chromium-based browser that loads
-unpacked extensions exactly like desktop Chrome, no code changes needed.
+No mainstream mobile browser reliably supports loading unpacked extensions anymore
+(Kiwi Browser's extension support has broken down), so mobile works via a
+**bookmarklet** instead: a bookmark whose URL is JavaScript instead of a link. Tap it
+while on a Vinted seller page and it injects the exact same filter bar as the
+extension. It works in Chrome, Brave, Firefox, Samsung Internet — any browser that
+lets you edit a bookmark's URL — but you tap it manually each time instead of it
+running automatically.
 
-1. Install Kiwi Browser from the Play Store.
-2. Get the `extension` folder onto your phone: easiest is downloading and unzipping
-   `vinted-size-filter.zip` (see "Sharing it with someone else" below) using your phone's
-   file manager app, so you end up with a plain `extension` folder in local storage
-   (e.g. under `Download/`).
-3. In Kiwi Browser, go to the menu (⋮) → **Extensions**.
-4. Toggle on **Developer mode** (top of that screen).
-5. Tap **Load unpacked**, then browse to and select the `extension` folder.
-6. Visit a Vinted seller page in Kiwi Browser — the filter bar appears the same as on
-   desktop, with the mobile layout adjustments in `content.css` kicking in on narrow
-   screens.
+1. Open [`bookmarklet/bookmarklet.txt`](bookmarklet/bookmarklet.txt) in this repo and
+   copy its entire contents (one long line starting with `javascript:`).
+2. On your phone, bookmark any page, then edit that bookmark: set the **name** to
+   something like "Vinted Size Filter" and replace the **URL** with what you copied.
+   (In Chrome/Brave for Android: Bookmarks → the new bookmark → ⋮ → Edit.)
+3. Go to a Vinted seller page, open your bookmarks, tap "Vinted Size Filter". The
+   filter bar appears the same as the desktop extension.
+4. If you navigate to a different seller page, tap the bookmarklet again — it doesn't
+   persist across page loads the way an installed extension does.
 
-This is Kiwi-specific — Chrome and Firefox for Android still won't run it.
+The bookmarklet is generated from `extension/content.js` and `extension/content.css`
+via `node bookmarklet/build.js`, so it always matches the extension's behavior. If you
+change either of those files, rerun that command to regenerate it.
 
 ## Sharing it with someone else
 
