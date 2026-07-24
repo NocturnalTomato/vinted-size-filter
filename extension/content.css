@@ -1,7 +1,5 @@
 .vsf-bar {
-  position: sticky;
-  top: 0;
-  z-index: 50;
+  position: static;
   background: #ffffff;
   border: 1px solid #e4e4e4;
   border-radius: 8px;
