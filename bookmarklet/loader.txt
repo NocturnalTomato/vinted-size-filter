@@ -1,0 +1,1 @@
+javascript:(function(){var d=document,s=d.createElement('script');s.src='https://raw.githubusercontent.com/NocturnalTomato/vinted-size-filter/main/bookmarklet/inline.js?t='+Date.now();d.body.appendChild(s);})();

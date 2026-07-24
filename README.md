@@ -37,8 +37,11 @@ extension. It works in Chrome, Brave, Firefox, Samsung Internet — any browser 
 lets you edit a bookmark's URL — but you tap it manually each time instead of it
 running automatically.
 
-1. Open [`bookmarklet/bookmarklet.txt`](bookmarklet/bookmarklet.txt) in this repo and
-   copy its entire contents (one long line starting with `javascript:`).
+The bookmarklet itself is short — it's just a loader that fetches the real,
+always-up-to-date script from this repo (which is why the repo needs to be public):
+
+1. Open [`bookmarklet/loader.txt`](bookmarklet/loader.txt) in this repo and copy its
+   entire contents (one line starting with `javascript:`).
 2. On your phone, bookmark any page, then edit that bookmark: set the **name** to
    something like "Vinted Size Filter" and replace the **URL** with what you copied.
    (In Chrome/Brave for Android: Bookmarks → the new bookmark → ⋮ → Edit.)
@@ -47,9 +50,11 @@ running automatically.
 4. If you navigate to a different seller page, tap the bookmarklet again — it doesn't
    persist across page loads the way an installed extension does.
 
-The bookmarklet is generated from `extension/content.js` and `extension/content.css`
-via `node bookmarklet/build.js`, so it always matches the extension's behavior. If you
-change either of those files, rerun that command to regenerate it.
+`bookmarklet/inline.js` (what the loader fetches) is generated from
+`extension/content.js` and `extension/content.css` via `node bookmarklet/build.js`, so
+it always matches the extension's behavior. If you change either source file, rerun
+that command and push — the loader bookmarklet on your phone never needs to change,
+since it just fetches whatever's currently in the repo.
 
 ## Sharing it with someone else
 
