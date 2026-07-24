@@ -27,6 +27,21 @@ have to scroll manually to find matches further down.
 4. Visit any Vinted seller page, e.g. `https://www.vinted.nl/member/<id>`. A filter bar
    appears above their listed items.
 
+## Sharing it with someone else
+
+Since this isn't published to the Chrome Web Store, the easiest way to hand it to
+someone is to zip the `extension/` folder and send them the zip:
+
+1. Zip the `extension/` folder (just that folder, not the whole repo).
+2. Send them the zip file.
+3. They unzip it anywhere on their PC, then follow the **Install** steps above,
+   pointing "Load unpacked" at the unzipped `extension` folder.
+
+No account, build step, or Chrome Web Store review needed — it's the same unpacked
+install either of you would do, just starting from a zip instead of a git clone.
+Chrome will keep re-enabling Developer mode warnings on restart for unpacked
+extensions; that's normal.
+
 ## Supported domains
 
 The extension is scoped to the Vinted country domains listed in `extension/manifest.json`
