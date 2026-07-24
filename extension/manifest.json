@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Vinted Size Filter",
+  "version": "0.1.0",
+  "description": "Adds a size filter to Vinted seller pages, where Vinted's own search only offers one on the general catalog.",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.vinted.com/member/*",
+        "*://www.vinted.co.uk/member/*",
+        "*://www.vinted.de/member/*",
+        "*://www.vinted.fr/member/*",
+        "*://www.vinted.it/member/*",
+        "*://www.vinted.es/member/*",
+        "*://www.vinted.pl/member/*",
+        "*://www.vinted.nl/member/*",
+        "*://www.vinted.be/member/*",
+        "*://www.vinted.at/member/*",
+        "*://www.vinted.cz/member/*",
+        "*://www.vinted.sk/member/*",
+        "*://www.vinted.lt/member/*",
+        "*://www.vinted.lu/member/*",
+        "*://www.vinted.pt/member/*",
+        "*://www.vinted.se/member/*",
+        "*://www.vinted.fi/member/*",
+        "*://www.vinted.ie/member/*",
+        "*://www.vinted.hu/member/*",
+        "*://www.vinted.ro/member/*",
+        "*://www.vinted.gr/member/*",
+        "*://www.vinted.dk/member/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

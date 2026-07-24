@@ -1,0 +1,86 @@
+.vsf-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #ffffff;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 8px 0 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  font-family: inherit;
+}
+
+.vsf-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.vsf-label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.vsf-input {
+  flex: 1 1 160px;
+  min-width: 120px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.vsf-clear,
+.vsf-loadall {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f5f5f5;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.vsf-clear:hover,
+.vsf-loadall:hover {
+  background: #ececec;
+}
+
+.vsf-loadall:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.vsf-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.vsf-chip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.vsf-chip:hover {
+  border-color: #09b1ba;
+}
+
+.vsf-chip--active {
+  background: #09b1ba;
+  border-color: #09b1ba;
+  color: #fff;
+}
+
+.vsf-status {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #767676;
+}
