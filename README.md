@@ -27,6 +27,26 @@ have to scroll manually to find matches further down.
 4. Visit any Vinted seller page, e.g. `https://www.vinted.nl/member/<id>`. A filter bar
    appears above their listed items.
 
+## Using it on Android
+
+Chrome for Android doesn't support extensions at all, but [Kiwi
+Browser](https://kiwibrowser.com/) does — it's a free, Chromium-based browser that loads
+unpacked extensions exactly like desktop Chrome, no code changes needed.
+
+1. Install Kiwi Browser from the Play Store.
+2. Get the `extension` folder onto your phone: easiest is downloading and unzipping
+   `vinted-size-filter.zip` (see "Sharing it with someone else" below) using your phone's
+   file manager app, so you end up with a plain `extension` folder in local storage
+   (e.g. under `Download/`).
+3. In Kiwi Browser, go to the menu (⋮) → **Extensions**.
+4. Toggle on **Developer mode** (top of that screen).
+5. Tap **Load unpacked**, then browse to and select the `extension` folder.
+6. Visit a Vinted seller page in Kiwi Browser — the filter bar appears the same as on
+   desktop, with the mobile layout adjustments in `content.css` kicking in on narrow
+   screens.
+
+This is Kiwi-specific — Chrome and Firefox for Android still won't run it.
+
 ## Sharing it with someone else
 
 Since this isn't published to the Chrome Web Store, the easiest way to hand it to
